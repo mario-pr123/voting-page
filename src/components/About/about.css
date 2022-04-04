@@ -1,0 +1,127 @@
+.a {
+  height: 80vh;
+  background-color: rgb(20, 20, 20);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+}
+
+.a-left {
+  flex: 1.8;
+  position: relative;
+}
+.a-right {
+  flex: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  padding: 2rem;
+  background-color: rgb(20, 20, 20);
+}
+.a-li-desc{
+  padding-left: 1rem;
+}
+
+figure {
+  position: relative;
+  max-width: 100%;
+}
+.figure .image-hover {
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+}
+.figure .image-main {
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  object-fit: contain;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+}
+.figure:hover .image-hover {
+  opacity: 1;
+}
+.figure:hover .image-main {
+  opacity: 0;
+}
+.a-right-list {
+  margin-top: 2rem;
+}
+.a-right p {
+  font-weight: 300;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.a-right p:hover {
+  color: #b69e6b;
+  transform: scale(1.02);
+}
+.a-right ul {
+  padding: 0;
+}
+
+.a-right ul li {
+  list-style: none;
+  display: flex;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.a-right ul li:hover {
+  color: #b69c63;
+  transform: translateX(1rem);
+}
+.a-right ul li i {
+  font-size: 25px;
+}
+.a-title {
+  font-weight: 900;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.a-title:hover {
+  color: #b19250;
+  transform: scale(1.01);
+}
+
+.a-list-icon {
+  width: 20px;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width:845px) {
+  .a{
+    flex-direction: column;
+    height: auto;
+  }
+  .a-left{
+    display: none
+  }
+  .a-right{
+    padding: 4rem 2rem;
+    background-color: rgba(20, 20, 20, 0.712);
+  }
+  .a-title{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .a-right p{
+    font-size: .9rem;
+  }
+  .a-li-desc{
+    text-align: left;
+  }
+}

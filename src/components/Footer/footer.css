@@ -1,0 +1,66 @@
+.footer {
+  background: rgb(20, 20, 20);
+  padding: 2.5rem 0;
+}
+.footer .footerSocial {
+  margin-left: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  color: white;
+}
+.footer .footerInfo {
+  padding-bottom: 25px;
+  margin-left: 5%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footerSocial a {
+  font-size: 2rem;
+  color: inherit;
+  padding: 10px;
+}
+.footer .footerSocial i {
+  transition: 0.3s ease-in-out;
+}
+.footer .footerSocial i:hover {
+  transform: translateY(-10px);
+  color: #b19250;
+}
+.footer .footerCopyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.705);
+}
+.f-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 5s infinite;
+}
+.link-info {
+  padding: 0 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+.link-info:hover {
+  transform: scale(1.1);
+  color: #b19250;
+}
+@keyframes spin {
+  50% {
+    transform: rotateY(90deg);
+  }
+}
+@media screen and (max-width:845px) {
+  .footerInfo{
+    flex-direction: column;
+    margin-left: 0;
+  }
+}
