@@ -40,7 +40,6 @@
   text-align: center;
   font-size: 1rem;
   padding: .5rem;
-  width: 550px;
   font-weight: 200;
 }
 .t-wrapper h2 {
@@ -89,6 +88,7 @@
   justify-content: center;
   text-transform: uppercase;
   font-size: 2.5rem;
+  text-align: center;
 }
 
 .vote-button {
@@ -319,6 +319,10 @@ form {
 }
 .back-button {
   background: transparent;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 999;
   color: #b19250;
   border: none;
   cursor: pointer;
@@ -368,4 +372,7 @@ form {
   .back-side img {
     height: 230px;
   }
+}
+.cats-names{
+  width: 40%;
 }

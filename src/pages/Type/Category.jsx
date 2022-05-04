@@ -42,14 +42,14 @@ export default function Category() {
 
   return (
     <div className="type">
+      <button className="back-button" onClick={handleBack}>
+        <i className="fa-solid fa-rotate-left"></i>
+      </button>
       <div className="t-wrapper" data-aos="zoom-out">
-        <h1 className="categories">
-          CATEGORÍAS{" "}
-          <button className="back-button" onClick={handleBack}>
-            <i className="fa-solid fa-rotate-left"></i>
-          </button>
-        </h1>
-        <p className="cat-desc">Escoge una categoría para ver a sus nominados y emitir tu voto</p>
+        <h1 className="categories">CATEGORÍAS </h1>
+        <p className="cat-desc">
+          Escoge una categoría para ver a sus nominados y emitir tu voto
+        </p>
 
         <div className="t-types" data-aos="zoom-in">
           {category &&
@@ -61,7 +61,7 @@ export default function Category() {
               >
                 <div className="t-cards">
                   <img src={bgnominee} alt="" width="270px" />
-                  <div>{cat.name_category}</div>
+                  <div className="cats-names">{cat.name_category}</div>
                 </div>
               </Link>
             ))}

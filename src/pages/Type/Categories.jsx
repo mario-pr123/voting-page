@@ -127,21 +127,17 @@ export default function Categories() {
   return (
     <div className="type">
       <div className="t-wrapper" data-aos="zoom-out">
+        <button onClick={() => navigate(-1)} className="back-button">
+          <i className="fa-solid fa-rotate-left"></i>
+        </button>
         <div>
           {catName &&
             catName.map((catN, index) => (
               <div key={index}>
                 <h1 className="categories">
                   Nominados a&nbsp;<b>"{catN.name_category}"</b>
-                  <button onClick={() => navigate(-1)} className="back-button">
-                    <i className="fa-solid fa-rotate-left"></i>
-                  </button>
                 </h1>
-                <p className="cat-desc">
-                  Pasa el mouse por encima de las tarjetas para ver una foto de
-                  los nominados, posteriormente desliza hacia abajo para
-                  encontrar la opción de votar
-                </p>
+                <p className="cat-desc">{catN.desc_cat}</p>
               </div>
             ))}
         </div>
@@ -185,7 +181,8 @@ export default function Categories() {
             ) : hasError ? (
               <div className="holder">
                 <h2>
-                  Has acabado con tus votos para esta categoría :( <br />
+                  Has acabado con tus votos para esta categoría &#128546;
+                  <br />
                   Intentalo de nuevo el día de mañana!
                 </h2>
                 <button className="close-button" onClick={closeModal}>
