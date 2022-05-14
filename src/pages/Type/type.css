@@ -339,7 +339,50 @@ form {
 }
 .back-button:hover {
   transform: scale(1.1);
-  background: rgba(206, 62, 26, 0.596);
+  background: rgba(206, 26, 26, 0.596);
+}
+.reload-button{
+  background: transparent;
+  position: absolute;
+  right: 55px;
+  top: 15px;
+  z-index: 999;
+  color: #b19250;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10%;
+  box-shadow: -1px -6px 14px rgba(0, 0, 0, 0.7),
+    -6px -6px 10px rgba(0, 0, 0, 0.5), 6px 6px 8px rgba(24, 24, 24, 0.281),
+    6px 6px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+}
+.reload-button:hover {
+  transform: scale(1.1);
+  background: rgba(29, 206, 26, 0.596);
+}
+.chart-wrapper{
+  height: 65vh;
+  width: 65vh;
+  padding: 3rem;
+  box-shadow: -1px -6px 14px rgba(0, 0, 0, 0.7),
+    -6px -6px 10px rgba(0, 0, 0, 0.5), 6px 6px 8px rgba(24, 24, 24, 0.281),
+    6px 6px 10px rgba(0, 0, 0, 0.15);
+  background: rgb(20, 20, 20);
+  border-radius: 2%;
+}
+.r-categories{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 @media screen and (max-width: 804px) {
   .type-img {
@@ -353,13 +396,26 @@ form {
   .type {
     height: auto;
   }
-  .categories {
+  .chart-wrapper{
+    height: 80%;
+    width: 80%;
+    padding: 1rem;
+  }
+  .categories,.r-categories {
     flex-direction: column;
     font-size: 2rem;
+  }
+  .r-categories{
+    padding: 1rem;
   }
   .back-button {
     position: absolute;
     right: 0;
+    top: 1rem;
+  }
+  .reload-button {
+    position: absolute;
+    right: 3rem;
     top: 1rem;
   }
   .t-wrapper p {

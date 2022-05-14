@@ -128,7 +128,7 @@ export default function Categories() {
     <div className="type">
       <div className="t-wrapper" data-aos="zoom-out">
         <button onClick={() => navigate(-1)} className="back-button">
-          <i className="fa-solid fa-rotate-left"></i>
+          <i className="fa fa-arrow-left" aria-hidden="true"></i>
         </button>
         <div>
           {catName &&

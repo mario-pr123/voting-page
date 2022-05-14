@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import VotesService from "../../services/VotesService";
 import "./type.css";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import bgnominee from "../../img/bgnominees.png";
-import { useNavigate } from "react-router-dom";
 
-export default function Category() {
-  const { id } = useParams();
+export default function Results() {
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    retrieveCategory(id);
-  }, [id]);
-  const retrieveCategory = (id) => {
-    VotesService.getCategory(id)
+    retrieveCategory();
+    Aos.init({ duration: 2000 });
+  }, []);
+  const retrieveCategory = () => {
+    VotesService.category()
       .then((response) => {
         setCategory(response.data);
+        console.log(response.data);
       })
       .catch((err) => {
         alert("Error");
@@ -30,34 +30,25 @@ export default function Category() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [initial]);
-
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
-
-  let navigate = useNavigate();
-  function handleBack() {
-    navigate("/type");
-  }
-
   return (
     <div className="type">
-      <button className="back-button" onClick={handleBack}>
-        <i className="fa fa-arrow-left" aria-hidden="true"></i>
-      </button>
       <div className="t-wrapper" data-aos="zoom-out">
-        <h1 className="categories">CATEGORÍAS </h1>
-        <p className="cat-desc">
-          Escoge una categoría para ver a sus nominados y emitir tu voto
+        <h1>
+          RESULTADOS
+          <br />
+          <b>VOTACIONES</b>
+          <br />
+        </h1>
+        <p className="type-desc">
+          Elige una categoría para observar el resultado de las votaciones
         </p>
-
         <div className="t-types" data-aos="zoom-in">
           {category &&
             category.map((cat, index) => (
               <Link
-                to={"/categories/" + cat.id_category}
-                key={index}
+                to={"/results/" + cat.id_category}
                 className="link"
+                key={index}
               >
                 <div className="t-cards">
                   <img src={bgnominee} alt="" width="270px" />
