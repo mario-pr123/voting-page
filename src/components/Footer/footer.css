@@ -59,7 +59,7 @@
   }
 }
 @media screen and (max-width:845px) {
-  .footerInfo{
+  .footer .footerInfo{
     flex-direction: column;
     margin-left: 0;
   }

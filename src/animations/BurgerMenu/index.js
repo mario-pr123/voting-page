@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./style.scss"
 import "./navbar.css"
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 export default function BurgerMenu() {
     const [status, setStatus] = useState('close')
@@ -10,8 +12,11 @@ export default function BurgerMenu() {
         setStatus(status === 'open' ? 'close' : 'open')
         setStatusMenu(statusMenu === 'openMenu' ? 'closeMenu' : 'openMenu')
     }
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
     return (
-        <nav>
+        <nav data-aos="zoom-out">
             <div className="burger-menu-container"
                 role="button"
                 onClick={activateMenu}
