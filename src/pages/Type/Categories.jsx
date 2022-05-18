@@ -89,7 +89,7 @@ export default function Categories() {
   useEffect(() => {
     if (initial === 0) {
       setInitial(1);
-      window.scrollTo({ top: 1, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [initial]);
   const customStyles = {
@@ -117,7 +117,7 @@ export default function Categories() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
     setIsOpen(true);
-    setInitial(0);
+    window.scrollTo({ top: 1, behavior: "smooth" });
   }
   function closeModal() {
     setIsOpen(false);
