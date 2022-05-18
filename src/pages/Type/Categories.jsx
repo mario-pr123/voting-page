@@ -16,6 +16,11 @@ export default function Categories() {
   const [none, setNone] = useState(false);
   const [hasError, setHasError] = useState(false);
   const { id } = useParams();
+  const [isScrolled, setIsScrolled] = useState(false);
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
   useEffect(() => {
     retrieveCategories(id);
     retrieveCatName(id);
@@ -84,7 +89,7 @@ export default function Categories() {
   useEffect(() => {
     if (initial === 0) {
       setInitial(1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 1, behavior: "smooth" });
     }
   }, [initial]);
   const customStyles = {
@@ -123,9 +128,17 @@ export default function Categories() {
   }-${current.getDate()}`;
 
   const navigate = useNavigate();
-
+  const flechaAn = () => {
+    window.scrollTo({ top: 2750, behavior: "smooth" });
+  };
   return (
     <div className="type">
+      <button
+        onClick={flechaAn}
+        className={isScrolled ? "down-button scrolled" : "down-button"}
+      >
+        <i className="fa fa-arrow-down" aria-hidden="true"></i>
+      </button>
       <div className="t-wrapper" data-aos="zoom-out">
         <button onClick={() => navigate(-1)} className="back-button">
           <i className="fa fa-arrow-left" aria-hidden="true"></i>
@@ -141,6 +154,7 @@ export default function Categories() {
               </div>
             ))}
         </div>
+
         <div className="t-nominees" data-aos="zoom-in">
           {categories &&
             categories.map((cats, index) => (

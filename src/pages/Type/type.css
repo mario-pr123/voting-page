@@ -105,6 +105,7 @@
     -6px -6px 10px rgba(0, 0, 0, 0.5), 6px 6px 8px rgba(24, 24, 24, 0.281),
     6px 6px 10px rgba(0, 0, 0, 0.15);
   transition: 0.3s ease-in-out;
+  animation: bounce 0.8s alternate infinite ease-in;
 }
 .vote-button:hover {
   transform: scale(1.1);
@@ -365,6 +366,42 @@ form {
   transform: scale(1.1);
   background: rgba(29, 206, 26, 0.596);
 }
+.down-button {
+  background: transparent;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 999;
+  color: #b19250;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10%;
+  box-shadow: -1px -6px 14px rgba(0, 0, 0, 0.7),
+    -6px -6px 10px rgba(0, 0, 0, 0.5), 6px 6px 8px rgba(24, 24, 24, 0.281),
+    6px 6px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+  animation: bounce 0.8s alternate infinite ease-in;
+}
+.down-button:hover {
+  transform: scale(1.1);
+  background: rgba(26, 164, 206, 0.596);
+}
+.down-button.scrolled{
+  display: none;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .chart-wrapper{
   height: 65vh;
   width: 65vh;
@@ -417,6 +454,15 @@ form {
     position: absolute;
     right: 3rem;
     top: 1rem;
+    animation: none;
+  }
+  .down-button {
+    position: absolute;
+    right: 2.5rem;
+    top: 1rem;
+    bottom: auto;
+    animation: none;
+    padding: 0.5rem;
   }
   .t-wrapper p {
     text-align: center;
