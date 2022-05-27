@@ -46,7 +46,7 @@ export default function Results() {
           {category &&
             category.map((cat, index) => (
               <Link
-                to={"/results/" + cat.id_category}
+                to={"/cmVzdWx0cw==/" + cat.id_category}
                 className="link"
                 key={index}
               >

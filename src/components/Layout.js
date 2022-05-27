@@ -22,8 +22,8 @@ export default function Layout() {
                     <Route exact path="/type" element={<Type />} />
                     <Route exact path="/category/:id" element={<Category />} />
                     <Route exact path="/info" element={<InfoPage />} />
-                    <Route exact path="/results" element={<Results />} />
-                    <Route exact path="/results/:id" element={<CategoryResults />} />
+                    <Route exact path="/cmVzdWx0cw==" element={<Results />} />
+                    <Route exact path="/cmVzdWx0cw==/:id" element={<CategoryResults />} />
                 </Routes>
                 <Footer />
             </Router>
