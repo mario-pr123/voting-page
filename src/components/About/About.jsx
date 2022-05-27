@@ -24,7 +24,7 @@ export default function About() {
         <p>
           Consejo Estudiantil MEP (Movimiento Estudiantil Piagetiano) trabaja en
           beneficio de las necesidades de la comunidad estudiantil de acuerdo
-          con los valores de la Unidad Educatuva Jean Piaget. Nuestros objetivos
+          con los valores de la Unidad Educativa Jean Piaget. Nuestros objetivos
           principales son:
         </p>
         <div className="a-right-list">
