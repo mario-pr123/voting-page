@@ -56,8 +56,10 @@ export default function Categories() {
     };
     setNone(true);
     VotesService.vote(data)
-      .catch(() => {
+      .catch((err) => {
         setNone(false);
+        console.log(data);
+        console.log(err);
         setHasError(true);
         setSubmitted(false);
       })

@@ -2,7 +2,7 @@ import axios from "axios";
 import React from 'react'
 
 export default axios.create({
-    baseURL: 'https://premios-piagetianos-hgc8d.ondigitalocean.app/api/',
+    baseURL: 'https://radiant-tor-09458.herokuapp.com/api/',
     headers: {
         'Content-type': 'application/json'
     }
