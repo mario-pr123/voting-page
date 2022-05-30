@@ -35,7 +35,7 @@ export default function BurgerMenu() {
                         </li>
                         <li className="items">
                             <Link className="link" to="/type" onClick={activateMenu}>
-                                <div className="link-nav">Nominados</div>
+                                <div className="link-nav">Vota</div>
                             </Link>
                         </li>
                         <li className="items">
