@@ -18,8 +18,7 @@ export default function Info() {
             <br />
           </h1>
           <p className="p-desc">
-            ¡Vota por tus nominados favoritos en distintas categorías y asiste a
-            la gala presencial para ver a los ganadores!
+            ¡Asiste a la gala presencial para ver a los ganadores!
           </p>
           <p className="p-hashtag">#PREMIOS | #PIAGETIANOS</p>
         </div>

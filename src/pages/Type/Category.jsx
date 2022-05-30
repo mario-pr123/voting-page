@@ -48,7 +48,7 @@ export default function Category() {
       <div className="t-wrapper" data-aos="zoom-out">
         <h1 className="categories">CATEGORÍAS </h1>
         <p className="cat-desc">
-          Escoge una categoría para ver a sus nominados y emitir tu voto
+          Escoge una categoría para ver a sus nominados
         </p>
 
         <div className="t-types" data-aos="zoom-in">

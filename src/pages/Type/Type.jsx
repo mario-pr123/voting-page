@@ -46,11 +46,10 @@ export default function Type() {
           <br />
         </h1>
         <p className="type-desc">
-          Elige un tipo de miembro de la comunidad piagetiana y mira
-          las diversas categorías que tenemos para que apoyes a tus
-          nominados favoritos
+          Elige un tipo de miembro de la comunidad piagetiana y mira las
+          diversas categorías junto con sus nominados
         </p>
-        <h2>¡Participa ya!</h2>
+        <h2>VOTACIONES FINALIZADAS &#128575;</h2>
         <div className="t-types" data-aos="zoom-in">
           {type &&
             type.map((types, index) => (

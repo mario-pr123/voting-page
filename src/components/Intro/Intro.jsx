@@ -33,7 +33,7 @@ export default function Intro() {
           </div>
           <div>
             <Link className="link" to="/type">
-              <button className="i-button">VOTA TU FAVORITO</button>
+              <button className="i-button">NOMINADOS</button>
             </Link>
           </div>
         </div>

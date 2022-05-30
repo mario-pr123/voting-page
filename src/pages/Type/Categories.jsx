@@ -12,11 +12,11 @@ import { GiVote } from "react-icons/gi";
 export default function Categories() {
   const [categories, setCategories] = useState([]);
   const [catName, setCatName] = useState([]);
-  const [submitted, setSubmitted] = useState(false);
-  const [none, setNone] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
+  // const [none, setNone] = useState(false);
+  // const [hasError, setHasError] = useState(false);
   const { id } = useParams();
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
@@ -30,44 +30,44 @@ export default function Categories() {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const initialVoteState = {
-    id_vote: null,
-    email: "",
-    id_category: null,
-    id_nominee: null,
-    date: null,
-  };
-  const [vote, setVote] = useState(initialVoteState);
+  // const initialVoteState = {
+  //   id_vote: null,
+  //   email: "",
+  //   id_category: null,
+  //   id_nominee: null,
+  //   date: null,
+  // };
+  // const [vote, setVote] = useState(initialVoteState);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setVote({ ...vote, [name]: value });
-  };
-  const handleRadioChange = (event) => {
-    const { name, value } = event.target;
-    setVote({ ...vote, [name]: value });
-  };
-  const saveVote = () => {
-    let data = {
-      email: vote.email,
-      id_category: vote.id_category,
-      id_nominee: vote.id_nominee,
-      date: vote.date,
-    };
-    setNone(true);
-    VotesService.vote(data)
-      .catch((err) => {
-        setNone(false);
-        console.log(data);
-        console.log(err);
-        setHasError(true);
-        setSubmitted(false);
-      })
-      .then(() => {
-        setNone(false);
-        setSubmitted(true);
-      });
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setVote({ ...vote, [name]: value });
+  // };
+  // const handleRadioChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setVote({ ...vote, [name]: value });
+  // };
+  // const saveVote = () => {
+  //   let data = {
+  //     email: vote.email,
+  //     id_category: vote.id_category,
+  //     id_nominee: vote.id_nominee,
+  //     date: vote.date,
+  //   };
+  //   setNone(true);
+  //   VotesService.vote(data)
+  //     .catch((err) => {
+  //       setNone(false);
+  //       console.log(data);
+  //       console.log(err);
+  //       setHasError(true);
+  //       setSubmitted(false);
+  //     })
+  //     .then(() => {
+  //       setNone(false);
+  //       setSubmitted(true);
+  //     });
+  // };
 
   const retrieveCategories = (id) => {
     VotesService.getCategoriesById(id)
@@ -94,53 +94,53 @@ export default function Categories() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [initial]);
-  const customStyles = {
-    overlay: {
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 0.75)",
-    },
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      transform: "translate(-50%, -50%)",
-      background: " rgb(20, 20, 20)",
-      color: "#b19250",
-      border: "none",
-      borderRadius: "5px",
-      boxShadow:
-        " -1px -6px 14px rgba(0, 0, 0, 0.7), -6px -6px 10px rgba(0, 0, 0, 0.5), 6px 6px 8px rgba(24, 24, 24, 0.281), 6px 6px 10px rgba(0, 0, 0, 0.15)",
-    },
-  };
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-    window.scrollTo({ top: 1, behavior: "smooth" });
-  }
-  function closeModal() {
-    setIsOpen(false);
-  }
-  const current = new Date();
-  const date = `${current.getFullYear()}-0${
-    current.getMonth() + 1
-  }-${current.getDate()}`;
+  // const customStyles = {
+  //   overlay: {
+  //     top: 0,
+  //     left: 0,
+  //     right: 0,
+  //     bottom: 0,
+  //     backgroundColor: "rgba(0, 0, 0, 0.75)",
+  //   },
+  //   content: {
+  //     top: "50%",
+  //     left: "50%",
+  //     right: "auto",
+  //     bottom: "auto",
+  //     transform: "translate(-50%, -50%)",
+  //     background: " rgb(20, 20, 20)",
+  //     color: "#b19250",
+  //     border: "none",
+  //     borderRadius: "5px",
+  //     boxShadow:
+  //       " -1px -6px 14px rgba(0, 0, 0, 0.7), -6px -6px 10px rgba(0, 0, 0, 0.5), 6px 6px 8px rgba(24, 24, 24, 0.281), 6px 6px 10px rgba(0, 0, 0, 0.15)",
+  //   },
+  // };
+  // const [modalIsOpen, setIsOpen] = React.useState(false);
+  // function openModal() {
+  //   setIsOpen(true);
+  //   window.scrollTo({ top: 1, behavior: "smooth" });
+  // }
+  // function closeModal() {
+  //   setIsOpen(false);
+  // }
+  // const current = new Date();
+  // const date = `${current.getFullYear()}-0${
+  //   current.getMonth() + 1
+  // }-${current.getDate()}`;
 
   const navigate = useNavigate();
-  const flechaAn = () => {
-    window.scrollTo({ top: 2750, behavior: "smooth" });
-  };
+  // const flechaAn = () => {
+  //   window.scrollTo({ top: 2750, behavior: "smooth" });
+  // };
   return (
     <div className="type">
-      <button
+      {/* <button
         onClick={flechaAn}
         className={isScrolled ? "down-button scrolled" : "down-button"}
       >
         <i className="fa fa-arrow-down" aria-hidden="true"></i>
-      </button>
+      </button> */}
       <div className="t-wrapper" data-aos="zoom-out">
         <button onClick={() => navigate(-1)} className="back-button">
           <i className="fa fa-arrow-left" aria-hidden="true"></i>
@@ -179,7 +179,7 @@ export default function Categories() {
             ))}
         </div>
         <div>
-          <div className="button-vote-wrapper">
+          {/* <div className="button-vote-wrapper">
             <button onClick={openModal} className="vote-button">
               <GiVote /> Vota tu Favorito
             </button>
@@ -299,7 +299,7 @@ export default function Categories() {
                 </div>
               </form>
             )}
-          </Modal>
+          </Modal> */}
         </div>
       </div>
     </div>
